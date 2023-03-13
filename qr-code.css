@@ -1,0 +1,37 @@
+body{
+    background-color:whitesmoke;
+    text-align: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px ;
+    height: 300px;
+    margin: 0  auto;
+}
+#big-Container{
+    margin:auto;
+    width:500px;
+}
+#qr-Kode{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 70px;
+    border-top: 10px;
+    border-bottom: 30px;
+    background-color:hsl(219, 54%, 47%);
+    text-align: center;
+    margin:auto;
+    width: 300px;
+    height:300px;
+    border: 2px ;
+
+}
+p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+

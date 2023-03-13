@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Example</title>
+    <link rel="stylesheet" href="./qr-code.css">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>"
+</head>
+<body>
+    <div id="big-Container">
+           <div id="qr-Kode"></div>
+           
+           <h3>Improve your front-end skills by building projects</h3>
+           <p>Scan the QR Code to visit Front-End Mentor.io and take your coding skills to the next level</p>
+    </div>
+    <div class="container">
+      
+        <form action="/" id="qr-generation">
+                <input type="text"
+                name ="qr-code-content"
+                id="qr-content" 
+                autocomplete="off"
+                value=""
+                placeholder="Enter QR Content"
+                size="40"><br>
+                <input type="submit"
+                value="Generate QR Code">
+        </form><br>
+    </div>
+    
+    <script>
+    let qrContentInput = document.getElementById("qr-content");
+    let qrGenerationForm = document.getElementById("qr-generation");
+    let qrCode;
+    
+    GenerateQR=(qrContent)=>{
+        return new QRCode("qr-Kode",{
+            text: qrContent,
+            width: 256,
+            height: 256,
+            colorDark:"#000000",
+            colorLight:"#ffffff",
+           // correctLevel:qrCode.correctLevel.H,
+        })
+    }
+
+    qrGenerationForm.addEventListener('submit',(event)=>{
+        event.preventDefault();
+        let qrContent=qrContentInput.value;
+        if (qrCode == null){
+            qrCode= GenerateQR(qrContent);
+        }else{
+            qrCode.makeCode(qrContent);
+        }
+    });
+
+
+    </script>
+
+</body>
+</html>
